@@ -52,9 +52,36 @@
 {
     if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;
+        //返回按钮
+        viewController.navigationItem.leftBarButtonItem = [self setBackButtonItem];
     }
     [super pushViewController:viewController animated:animated];
 }
+
+
+#pragma mark --- 统一返回按钮
+- (UIBarButtonItem *)setBackButtonItem {
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 44/2.0-22/2.0, 66.0/3.0, 66.0/3.0);
+    
+    [button setBackgroundImage:[UIImage imageNamed:@"byj_fanhui"] forState:0];
+    [button addTarget:self action:@selector(backViewController) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton* clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    clearBtn.frame = CGRectMake(0, 0, 44, 44);
+    [clearBtn addSubview:button];
+    [clearBtn addTarget:self action:@selector(backViewController) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem* someBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:clearBtn];
+    return someBarButtonItem;
+}
+
+- (void)backViewController {
+    
+    [self popViewControllerAnimated:YES];
+}
+
 
 
 /*

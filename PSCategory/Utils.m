@@ -1151,7 +1151,7 @@
     window.backgroundColor = [UIColor colorWithWhite:0.600 alpha:0.4000];
     window.hidden = NO;
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH * 0.15, SCREEN_HEIGHT *0.45, SCREEN_WIDTH * 0.7, SCREEN_HEIGHT * 0.1)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(KScreenWidth * 0.15, KScreenHeight *0.45, KScreenWidth * 0.7, KScreenHeight * 0.1)];
     label.text = alertMessage;
     label.font = [UIFont boldSystemFontOfSize:20];
     label.numberOfLines = 0;
@@ -1247,7 +1247,7 @@
 {
     NSDictionary *attribute = @{NSFontAttributeName:font};
     
-    CGSize size = [str boundingRectWithSize:CGSizeMake(SCREEN_WIDTH, CGFLOAT_MAX)
+    CGSize size = [str boundingRectWithSize:CGSizeMake(KScreenWidth, CGFLOAT_MAX)
                                     options: NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                  attributes:attribute
                                     context:nil].size;
@@ -1528,14 +1528,14 @@
     
     UIWindow    *window = [[[UIApplication sharedApplication] delegate] window];
     
-    UIView      *view = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/4, (SCREEN_HEIGHT - 80)/2, SCREEN_WIDTH/2, length>=12?100:80)];
+    UIView      *view = [[UIView alloc]initWithFrame:CGRectMake(KScreenWidth/4, (KScreenHeight - 80)/2, KScreenWidth/2, length>=12?100:80)];
     view.backgroundColor = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.7];
     view.layer.cornerRadius = 6;
     view.clipsToBounds = YES;
     window.userInteractionEnabled = NO;
     [window addSubview:view];
     
-    UIImageView    *imageView = [[UIImageView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH/2 - 40)/2, 10, 40, 40)];
+    UIImageView    *imageView = [[UIImageView alloc]initWithFrame:CGRectMake((KScreenWidth/2 - 40)/2, 10, 40, 40)];
     imageView.image = alertImage;
     
     UILabel         *label=[UILabel new];
@@ -1546,7 +1546,7 @@
     label.backgroundColor = [UIColor clearColor];
     label.numberOfLines = 2;
     //    if (IS_IPHONE5) {
-    view.frame =CGRectMake(SCREEN_WIDTH/4-25, (SCREEN_HEIGHT - 80)/2-60, SCREEN_WIDTH/2+50, length>=12?100:80);
+    view.frame =CGRectMake(KScreenWidth/4-25, (KScreenHeight - 80)/2-60, KScreenWidth/2+50, length>=12?100:80);
     
     imageView.frame =CGRectMake((view.frame.size.width-40)/2, 10, 40, 40);
     label.font = [UIFont systemFontOfSize:14];

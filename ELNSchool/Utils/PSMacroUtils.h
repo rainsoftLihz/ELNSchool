@@ -31,9 +31,9 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];       \
 
 #pragma mark - 屏幕相关
 
-#define kWProportion (SCREEN_WIDTH/1242)
+#define kWProportion (KScreenWidth/1242)
 
-#define kHProportion (SCREEN_HEIGHT/2208)
+#define kHProportion (KScreenHeight/2208)
 
 //设备的尺寸
 #define KScreenBounds [UIScreen mainScreen].bounds

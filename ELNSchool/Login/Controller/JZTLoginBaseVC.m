@@ -45,7 +45,7 @@
 -(UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [self topSpace], SCREEN_WIDTH, self.iconArr.count*[JZTLoginViewCell cellHeight])];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [self topSpace], KScreenWidth, self.iconArr.count*[JZTLoginViewCell cellHeight])];
         _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
         [_tableView  setSeparatorColor:UIColorFromRGB(0xe5e5e5)];
         _tableView.bounces = NO;
@@ -119,7 +119,7 @@
     CGFloat height = 127/3.0;
     
     UIButton* submitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    submitBtn.frame = CGRectMake(leftSpace,self.tableView.bottom+50, SCREEN_WIDTH-2*leftSpace, height);
+    submitBtn.frame = CGRectMake(leftSpace,self.tableView.bottom+50, KScreenWidth-2*leftSpace, height);
     [submitBtn setTitle:title forState:UIControlStateNormal];
     [submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     submitBtn.titleLabel.font = [UIFont systemFontOfSize:17.0];
@@ -140,7 +140,7 @@
 -(void)configHeaderWith:(NSString*)title
 {
     UILabel* titleLab = [[UILabel alloc] init];
-    titleLab.frame = CGRectMake(0, [self headerTopSpace], SCREEN_WIDTH, 88*kHProportion);
+    titleLab.frame = CGRectMake(0, [self headerTopSpace], KScreenWidth, 88*kHProportion);
     titleLab.font = [UIFont boldSystemFontOfSize:17.0];
     titleLab.textColor = UIColor.blackColor;
     titleLab.text = title;

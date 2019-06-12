@@ -56,7 +56,8 @@
         vc.navigationItem.title = self.titleAry[i];;
         vc.tabBarItem.selectedImage = [UIImage imageNamed:self.imgSelectAry[i]];
         vc.tabBarItem.image = [UIImage imageNamed:self.imgNomalAry[i]];
-        
+        //隐藏默认的返回按钮
+        vc.navigationItem.hidesBackButton = YES;
         PSNavViewController *nav = [[PSNavViewController alloc]initWithRootViewController:vc];
         [vcs addObject:nav];
     }

@@ -33,6 +33,13 @@ target 'ELNSchool' do
     #pod 'WebViewJavascriptBridge', '~> 6.0.3'
     #页面滑动控制
     #pod 'SGPagingView'
+    
+    #轮播框架
+     pod 'SDCycleScrollView', '~> 1.75'
+    #视频播放
+    pod 'ZFPlayer', '~> 3.2.3'
+    pod 'ZFPlayer/ControlView', '~> 3.2.3'
+    pod 'ZFPlayer/AVPlayer', '~> 3.2.3'
 end
 
 

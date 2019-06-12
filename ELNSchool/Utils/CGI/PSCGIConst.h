@@ -37,6 +37,8 @@ typedef void(^PSCGISuccessBlock)(NSURLSessionDataTask *task, id response);
 
 typedef void(^PSCGIFaileBlock)(NSURLSessionDataTask *task, NSError* error);
 
+//文件下载回调
+typedef void (^PScompletionHandler)(NSURLResponse *response, NSURL *filePath, NSError *error);
 
 /*!
  *  请求网络途径Mask

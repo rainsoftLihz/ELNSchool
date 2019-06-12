@@ -23,7 +23,7 @@
     [self configBottomActionBtnWithTitle:@"下一步"];
     
     WeakSelf;
-    PSLoginBaseView* phoneView = [[PSLoginBaseView alloc] initWithFrame:CGRectMake(0, [self contentSpace], SCREEN_WIDTH, 49.0) andIcon:@"Phone" andPlacehold:@"请输入手机号" andBlock:^(NSString * phoneStr) {
+    PSLoginBaseView* phoneView = [[PSLoginBaseView alloc] initWithFrame:CGRectMake(0, [self contentSpace], KScreenWidth, 49.0) andIcon:@"Phone" andPlacehold:@"请输入手机号" andBlock:^(NSString * phoneStr) {
         
         [PSLoginManager manager].mobile = phoneStr;
         
@@ -45,17 +45,21 @@
     NSString* md5Str = [NSString stringWithFormat:@"%@%@",[PSLoginManager manager].mobile,MD5_SCRECT_CODE];
     NSDictionary* params = @{@"mobile":[PSLoginManager manager].mobile,
                              @"verifyCode":[Utils md5:md5Str]};
-    [SVProgressHUD show];
+  
     [PSLoginAPI getMessageCodeWith:params Success:^(NSURLSessionDataTask *task, PSRsponse* response) {
-        [SVProgressHUD dismiss];
+     
         if ([response.ret isEqualToString:@"-1"] && [response.err_code isEqualToString:@"9992"]) {
             //未注册并没有邀请码 跳转到邀请码
             [self presentViewController:[PSCodeVController new] animated:YES completion:nil];
         }else {
             //获取验证码
             NSString* coopCode = response.data[@"coopCode"];
-            [PSLoginManager manager].coopCode = coopCode;
-            [self presentViewController:[PSMessageController new] animated:YES completion:nil];
+            if ([Utils isBlankString:coopCode]) {
+                [SVProgressHUD showErrorWithStatus:@"coopCode返回为空"];
+            }else {
+                [PSLoginManager manager].coopCode = coopCode;
+                [self presentViewController:[PSMessageController new] animated:YES completion:nil];
+            }
         }
         
     } faile:^(NSURLSessionDataTask *task, NSError *error) {

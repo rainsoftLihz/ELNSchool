@@ -98,12 +98,6 @@
     [self.view addSubview:titleLab];
 }
 
-
--(void)viewWillDisappear:(BOOL)animated{
-   [super viewWillDisappear:animated];
-   [MBProgressHUD HUDForView:[UIApplication sharedApplication].keyWindow];
-}
-
 /*
 #pragma mark - Navigation
 

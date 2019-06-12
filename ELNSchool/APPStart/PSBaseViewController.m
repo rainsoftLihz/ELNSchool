@@ -23,7 +23,10 @@
     /* 坐标系从navigationBar开始 */
     self.navigationController.navigationBar.translucent = YES;
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
+}
+
+-(void)dealloc{
+    NSLog(@"销毁>>>>>>>%@",self);
 }
 
 /*

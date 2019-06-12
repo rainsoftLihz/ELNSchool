@@ -21,6 +21,7 @@
 #import <Masonry/Masonry.h>
 
 #import <SDWebImage/UIImage+GIF.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #import <AFNetworking/AFNetworking.h>
 
@@ -38,5 +39,8 @@
 #import "NSObject+YYModel.h"
 #import "NSObject+HKModel.h"
 
+#import <SDCycleScrollView/SDCycleScrollView.h>
+
+#import <ZFPlayer/ZFPlayer.h>
 
 #endif /* PS_PrefixHeader_pch */

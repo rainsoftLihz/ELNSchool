@@ -22,7 +22,7 @@
     [self configHeaderWith:@"请输入短信验证码"];
     
     WeakSelf;
-    PSInPutCodeView* psView = [[PSInPutCodeView alloc] initWithFrame:CGRectMake(0, [self contentSpace], SCREEN_WIDTH, 49) andCount:4 andSpace:8 codeBlock:^(NSString * code) {
+    PSInPutCodeView* psView = [[PSInPutCodeView alloc] initWithFrame:CGRectMake(0, [self contentSpace], KScreenWidth, 49) andCount:4 andSpace:8 codeBlock:^(NSString * code) {
         NSLog(@"code === %@",code);
         wkSelf.inputCode = code;
         if (code.length == 4){
@@ -46,7 +46,7 @@
                              @"verifyCode":[Utils md5:md5Str],
                              @"partnerNo":[PSLoginManager manager].partnerNo?:@"",
                              @"inputCode":self.inputCode,
-                             @"coopCode":[PSLoginManager manager].coopCode};
+                             @"coopCode":[PSLoginManager manager].coopCode?:@""};
     
     [PSLoginAPI loginWith:params Success:^(NSURLSessionDataTask *task, id response) {
         

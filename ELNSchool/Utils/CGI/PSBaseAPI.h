@@ -12,6 +12,7 @@
 #import "PSCGIServer.h"
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface PSBaseAPI : NSObject
 //PSCGIRequestMask Response 自定义
 + (NSURLSessionDataTask *)post:(NSString *)URLString
@@ -53,6 +54,12 @@ NS_ASSUME_NONNULL_BEGIN
                    parameters:(id)parameters
                       success:(PSCGISuccessBlock)success
                       failure:(PSCGIFaileBlock)failure;
+
+
+/*
+ 文件下载
+ */
++(NSURLSessionDownloadTask*)downLoadFile:(NSString*)fileUrl complet:(PScompletionHandler)handeler;
 
 @end
 

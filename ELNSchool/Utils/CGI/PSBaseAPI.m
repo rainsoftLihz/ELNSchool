@@ -91,8 +91,9 @@
     
     parameters = [self appendGlobalParams:parameters];
     
+    [SVProgressHUD show];
     return [manager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
-        
+        [SVProgressHUD dismiss];
         PSRsponse *response = [PSRsponse modelWithDictionary:responseObject];
         success(task,response);
         
@@ -151,6 +152,7 @@
 }
 
 
+
 /**
  追加公共参数
  
@@ -177,5 +179,39 @@
 }
 
 
+/**
+ downLoad文件
+ */
+
++(NSURLSessionDownloadTask*)downLoadFile:(NSString*)fileUrl complet:(PScompletionHandler)handeler{
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    //中文转还
+    NSURL *URL = [NSURL URLWithString:[fileUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    //保存文件名
+    NSString *fileName = [fileUrl lastPathComponent];
+    
+    [SVProgressHUD showWithStatus:@"文件下载中..."];
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress *downloadProgress){
+        
+    } destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        //存储路径
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        NSURL *url = [documentsDirectoryURL URLByAppendingPathComponent:fileName];
+        return url;
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        [SVProgressHUD dismiss];
+        //回调
+        handeler(response,filePath,error);
+    }];
+    [downloadTask resume];
+    
+    return  downloadTask;
+}
 
 @end

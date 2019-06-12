@@ -23,9 +23,9 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     
-    //[self configRootViewController];
+    [self configRootViewController];
     
-    self.window.rootViewController = [PSPhoneController new];
+//    self.window.rootViewController = [PSPhoneController new];
     
     [self.window makeKeyAndVisible];
     

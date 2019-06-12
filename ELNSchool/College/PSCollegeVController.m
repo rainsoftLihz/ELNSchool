@@ -7,7 +7,8 @@
 //
 
 #import "PSCollegeVController.h"
-
+#import "PSDocmentPreviewController.h"
+#import "PSBaseWebVController.h"
 @interface PSCollegeVController ()
 
 @end
@@ -19,6 +20,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    PSDocmentPreviewController* web = [[PSDocmentPreviewController alloc] initWith:@"https://www.tutorialspoint.com/ios/ios_tutorial.pdf"];
+    [self.navigationController pushViewController:web animated:YES];
+}
 /*
 #pragma mark - Navigation
 
