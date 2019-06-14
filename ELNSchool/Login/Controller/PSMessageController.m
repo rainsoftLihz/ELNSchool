@@ -8,7 +8,6 @@
 
 #import "PSMessageController.h"
 #import "PSInPutCodeView.h"
-#import "PSBaseWebController.h"
 @interface PSMessageController ()
 @property(nonatomic,strong) NSString* inputCode;
 @end
@@ -50,14 +49,14 @@
     
     [PSLoginAPI loginWith:params Success:^(NSURLSessionDataTask *task, id response) {
         
-        PSBaseWebController* vc = [PSBaseWebController new];
+        //PSBaseWebController* vc = [PSBaseWebController new];
         PSRsponse* res = (PSRsponse*)response;
         if ([res.ret isEqualToString:@"0"]) {
             PSFrontPartner* frontUser = (PSFrontPartner*)res.data;
-            vc.user = (PSFrontPartner*)res.data;
+            //vc.user = (PSFrontPartner*)res.data;
             //保存 frontUserId 和 accessToken;
             [PSLoginManager saveFrontUser:frontUser];
-            [self presentViewController:[PSBaseWebController new] animated:YES completion:nil];
+            //[self presentViewController:[PSBaseWebController new] animated:YES completion:nil];
         }
         
     } faile:^(NSURLSessionDataTask *task, NSError *error) {

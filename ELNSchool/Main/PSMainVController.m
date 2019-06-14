@@ -10,6 +10,7 @@
 #import "PSHomeModel.h"
 #import "PSHomeAPI.h"
 #import "PSHomeHeaderView.h"
+#import "PSPlayerManger.h"
 @interface PSMainVController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView* tableView;
@@ -23,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.view addSubview:self.tableView];
+    //[self.view addSubview:self.tableView];
     
     _headerView = [[PSHomeHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, Adapt_scaleV(250))];
     //_headerView.backgroundColor = [UIColor darkGrayColor];
@@ -39,6 +40,11 @@
 
 
 -(void)reqData{
+    
+    NSString* url = @"http://audio.xmcdn.com/group55/M02/90/AA/wKgLf1yUdIzDELWBAGIa3y_-DnM545.m4a";
+    
+    [[PSPlayerManger manger] playWithUrlstr:url isCache:NO];
+    
     [PSHomeAPI getHomeDataSuccess:^(NSURLSessionDataTask *task, id response) {
         PSRsponse* res = (PSRsponse*)response;
         PSHomeModel* model = res.data;
@@ -46,6 +52,15 @@
     } faile:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    PSPlayerState state = [PSPlayerManger manger].state;
+    if (state == PSPlayerStatePlaying) {
+        [[PSPlayerManger manger] pause];
+    }else {
+        [[PSPlayerManger manger] resume];
+    }
 }
 
 
