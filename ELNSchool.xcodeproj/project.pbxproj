@@ -36,8 +36,12 @@
 		533F770722A797D8006DA05C /* PSLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 533F770622A797D8006DA05C /* PSLoginAPI.m */; };
 		534EAC36225CCD8A00A3A2D6 /* PSGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 534EAC34225CCD8900A3A2D6 /* PSGradientLayer.m */; };
 		534EAC39225CCD9400A3A2D6 /* UIView+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 534EAC38225CCD9400A3A2D6 /* UIView+Gradient.m */; };
-		53991CC422B379FB007AB52F /* PSPlayerManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 53991CC322B379FB007AB52F /* PSPlayerManger.m */; };
-		53991CC722B383A6007AB52F /* PSPlayerResourceLoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53991CC622B383A6007AB52F /* PSPlayerResourceLoder.m */; };
+		53991CC422B379FB007AB52F /* LHZPlayerManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 53991CC322B379FB007AB52F /* LHZPlayerManger.m */; };
+		53991CC722B383A6007AB52F /* LHZPlayerResourceLoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 53991CC622B383A6007AB52F /* LHZPlayerResourceLoder.m */; };
+		53991CCB22B39CF5007AB52F /* LHZDownLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53991CCA22B39CF5007AB52F /* LHZDownLoaderManager.m */; };
+		53991CCE22B39D0D007AB52F /* LHZDownLoaderFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 53991CCD22B39D0D007AB52F /* LHZDownLoaderFileTool.m */; };
+		53991CD122B39DD9007AB52F /* LHZDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 53991CD022B39DD9007AB52F /* LHZDownLoader.m */; };
+		539F174522B3C45800842153 /* NSString+LHZDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 539F174422B3C45800842153 /* NSString+LHZDownLoader.m */; };
 		53A4EEC322A9017400F101D4 /* PSPhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A4EEC222A9017400F101D4 /* PSPhoneController.m */; };
 		53A4EEC422A903FE00F101D4 /* PSLoginBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FD3A5522A8F4C900E8A9FD /* PSLoginBaseView.m */; };
 		53A4EEC722A91B2800F101D4 /* PSFrontPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A4EEC622A91B2800F101D4 /* PSFrontPartner.m */; };
@@ -133,10 +137,18 @@
 		534EAC35225CCD8A00A3A2D6 /* PSGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSGradientLayer.h; sourceTree = "<group>"; };
 		534EAC37225CCD9400A3A2D6 /* UIView+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gradient.h"; sourceTree = "<group>"; };
 		534EAC38225CCD9400A3A2D6 /* UIView+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gradient.m"; sourceTree = "<group>"; };
-		53991CC222B379FB007AB52F /* PSPlayerManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPlayerManger.h; sourceTree = "<group>"; };
-		53991CC322B379FB007AB52F /* PSPlayerManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSPlayerManger.m; sourceTree = "<group>"; };
-		53991CC522B383A6007AB52F /* PSPlayerResourceLoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSPlayerResourceLoder.h; sourceTree = "<group>"; };
-		53991CC622B383A6007AB52F /* PSPlayerResourceLoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSPlayerResourceLoder.m; sourceTree = "<group>"; };
+		53991CC222B379FB007AB52F /* LHZPlayerManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHZPlayerManger.h; sourceTree = "<group>"; };
+		53991CC322B379FB007AB52F /* LHZPlayerManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHZPlayerManger.m; sourceTree = "<group>"; };
+		53991CC522B383A6007AB52F /* LHZPlayerResourceLoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHZPlayerResourceLoder.h; sourceTree = "<group>"; };
+		53991CC622B383A6007AB52F /* LHZPlayerResourceLoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHZPlayerResourceLoder.m; sourceTree = "<group>"; };
+		53991CC922B39CF5007AB52F /* LHZDownLoaderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHZDownLoaderManager.h; sourceTree = "<group>"; };
+		53991CCA22B39CF5007AB52F /* LHZDownLoaderManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHZDownLoaderManager.m; sourceTree = "<group>"; };
+		53991CCC22B39D0D007AB52F /* LHZDownLoaderFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHZDownLoaderFileTool.h; sourceTree = "<group>"; };
+		53991CCD22B39D0D007AB52F /* LHZDownLoaderFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHZDownLoaderFileTool.m; sourceTree = "<group>"; };
+		53991CCF22B39DD9007AB52F /* LHZDownLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHZDownLoader.h; sourceTree = "<group>"; };
+		53991CD022B39DD9007AB52F /* LHZDownLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHZDownLoader.m; sourceTree = "<group>"; };
+		539F174322B3C45800842153 /* NSString+LHZDownLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+LHZDownLoader.h"; sourceTree = "<group>"; };
+		539F174422B3C45800842153 /* NSString+LHZDownLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+LHZDownLoader.m"; sourceTree = "<group>"; };
 		53A4EEC122A9017400F101D4 /* PSPhoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPhoneController.h; sourceTree = "<group>"; };
 		53A4EEC222A9017400F101D4 /* PSPhoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPhoneController.m; sourceTree = "<group>"; };
 		53A4EEC522A91B2800F101D4 /* PSFrontPartner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSFrontPartner.h; sourceTree = "<group>"; };
@@ -362,6 +374,7 @@
 		53380609225C2CF80060E743 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				53991CC822B39CBF007AB52F /* DownLoader */,
 				53D105A422B09F4900B8E03F /* Base */,
 				53AB737122ADFD8C00B6BF94 /* Loding */,
 				53EAACCB225C37AB004077A8 /* Router */,
@@ -411,6 +424,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		53991CC822B39CBF007AB52F /* DownLoader */ = {
+			isa = PBXGroup;
+			children = (
+				53991CC922B39CF5007AB52F /* LHZDownLoaderManager.h */,
+				53991CCA22B39CF5007AB52F /* LHZDownLoaderManager.m */,
+				53991CCC22B39D0D007AB52F /* LHZDownLoaderFileTool.h */,
+				53991CCD22B39D0D007AB52F /* LHZDownLoaderFileTool.m */,
+				53991CCF22B39DD9007AB52F /* LHZDownLoader.h */,
+				53991CD022B39DD9007AB52F /* LHZDownLoader.m */,
+				539F174322B3C45800842153 /* NSString+LHZDownLoader.h */,
+				539F174422B3C45800842153 /* NSString+LHZDownLoader.m */,
+			);
+			path = DownLoader;
+			sourceTree = "<group>";
+		};
 		53AB737122ADFD8C00B6BF94 /* Loding */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,10 +457,10 @@
 				53D105A922B09F8B00B8E03F /* PSBaseWebVController.m */,
 				53D105AE22B0EAA200B8E03F /* PSDocmentPreviewController.h */,
 				53D105AF22B0EAA200B8E03F /* PSDocmentPreviewController.m */,
-				53991CC222B379FB007AB52F /* PSPlayerManger.h */,
-				53991CC322B379FB007AB52F /* PSPlayerManger.m */,
-				53991CC522B383A6007AB52F /* PSPlayerResourceLoder.h */,
-				53991CC622B383A6007AB52F /* PSPlayerResourceLoder.m */,
+				53991CC222B379FB007AB52F /* LHZPlayerManger.h */,
+				53991CC322B379FB007AB52F /* LHZPlayerManger.m */,
+				53991CC522B383A6007AB52F /* LHZPlayerResourceLoder.h */,
+				53991CC622B383A6007AB52F /* LHZPlayerResourceLoder.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -676,6 +704,7 @@
 				534EAC36225CCD8A00A3A2D6 /* PSGradientLayer.m in Sources */,
 				53D9E98F225C9D5A00029C7F /* XTCourseExamModel.m in Sources */,
 				53FD3A5022A8F26D00E8A9FD /* PSMessageController.m in Sources */,
+				539F174522B3C45800842153 /* NSString+LHZDownLoader.m in Sources */,
 				53A4EEC322A9017400F101D4 /* PSPhoneController.m in Sources */,
 				53D9E974225C92D200029C7F /* PSHomeHeaderView.m in Sources */,
 				53EAACD8225C46BE004077A8 /* PSRsponse.m in Sources */,
@@ -688,8 +717,9 @@
 				5335DAAC225B83D400183509 /* main.m in Sources */,
 				534EAC39225CCD9400A3A2D6 /* UIView+Gradient.m in Sources */,
 				53D9E98C225C9D5A00029C7F /* PSHomeFrontUserModel.m in Sources */,
-				53991CC422B379FB007AB52F /* PSPlayerManger.m in Sources */,
+				53991CC422B379FB007AB52F /* LHZPlayerManger.m in Sources */,
 				533F770722A797D8006DA05C /* PSLoginAPI.m in Sources */,
+				53991CCE22B39D0D007AB52F /* LHZDownLoaderFileTool.m in Sources */,
 				533804F6225C29650060E743 /* PSNavViewController.m in Sources */,
 				533F76E922A7754F006DA05C /* NSMutableArray+BFKit.m in Sources */,
 				533805C5225C2B200060E743 /* NSObject+YYModel.m in Sources */,
@@ -698,12 +728,14 @@
 				533805C6225C2B200060E743 /* YYClassInfo.m in Sources */,
 				533F76EE22A7754F006DA05C /* NSArray+BFKit.m in Sources */,
 				533804D2225C25650060E743 /* UIView+JZTCateGory.m in Sources */,
+				53991CCB22B39CF5007AB52F /* LHZDownLoaderManager.m in Sources */,
 				53FD3A4822A8F02200E8A9FD /* PSLoginBaseVC.m in Sources */,
 				53FD3A4522A8BCD700E8A9FD /* PSTextField.m in Sources */,
+				53991CD122B39DD9007AB52F /* LHZDownLoader.m in Sources */,
 				533F76FF22A77A81006DA05C /* JZTLoginVController.m in Sources */,
 				53FD3A4222A8B77D00E8A9FD /* PSCodeVController.m in Sources */,
 				53EAACDB225C48B1004077A8 /* NSObject+HKModel.m in Sources */,
-				53991CC722B383A6007AB52F /* PSPlayerResourceLoder.m in Sources */,
+				53991CC722B383A6007AB52F /* LHZPlayerResourceLoder.m in Sources */,
 				53380502225C2A1D0060E743 /* PSMineVController.m in Sources */,
 				53FD3A5322A8F2B200E8A9FD /* PSLoginManager.m in Sources */,
 				533804F9225C29B00060E743 /* PSRootViewController.m in Sources */,

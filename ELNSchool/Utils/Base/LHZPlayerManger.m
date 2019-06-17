@@ -6,26 +6,26 @@
 //  Copyright © 2019年 jzt. All rights reserved.
 //
 
-#import "PSPlayerManger.h"
+#import "LHZPlayerManger.h"
 #import <AVFoundation/AVFoundation.h>
-#import "PSPlayerResourceLoder.h"
-@interface PSPlayerManger()
+#import "LHZPlayerResourceLoder.h"
+@interface LHZPlayerManger()
 //播放器
 @property (nonatomic, strong) AVPlayer *player;
 //资源下载
-@property (nonatomic, strong) PSPlayerResourceLoder* resourceLoder;
+@property (nonatomic, strong) LHZPlayerResourceLoder* resourceLoder;
 /** 音频当前播放URL */
 @property (nonatomic, strong) NSURL *url;
 
 @end
 
-@implementation PSPlayerManger
+@implementation LHZPlayerManger
 
-static PSPlayerManger* _manger;
+static LHZPlayerManger* _manger;
 +(instancetype)manger{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _manger = [[PSPlayerManger alloc] init];
+        _manger = [[LHZPlayerManger alloc] init];
     });
     return _manger;
 }
@@ -63,7 +63,7 @@ static PSPlayerManger* _manger;
     
     //1. 资源的请求
     AVURLAsset *asset = [AVURLAsset assetWithURL:url];
-    self.resourceLoder = [[PSPlayerResourceLoder alloc] init];
+    self.resourceLoder = [[LHZPlayerResourceLoder alloc] init];
     [asset.resourceLoader setDelegate:self.resourceLoder queue:dispatch_queue_create(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
     // 2. 资源的组织
     AVPlayerItem* item = [[AVPlayerItem alloc] initWithAsset:asset];

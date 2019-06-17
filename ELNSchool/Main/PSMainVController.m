@@ -10,7 +10,9 @@
 #import "PSHomeModel.h"
 #import "PSHomeAPI.h"
 #import "PSHomeHeaderView.h"
-#import "PSPlayerManger.h"
+#import "LHZPlayerManger.h"
+#import "LHZDownLoader.h"
+#import "LHZDownLoaderManager.h"
 @interface PSMainVController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView* tableView;
@@ -43,7 +45,24 @@
     
     NSString* url = @"http://audio.xmcdn.com/group55/M02/90/AA/wKgLf1yUdIzDELWBAGIa3y_-DnM545.m4a";
     
-    [[PSPlayerManger manger] playWithUrlstr:url isCache:NO];
+    [[LHZPlayerManger manger] playWithUrlstr:url isCache:NO];
+    
+//    LHZDownLoader* downLoader = [[LHZDownLoader alloc] init];
+//    [downLoader downLoadWithURL:[NSURL URLWithString:url] downLoadInfo:^(long long fileSize) {
+//        NSLog(@"fileSize--->%ld M",fileSize/1024);
+//    } success:^(NSString * _Nonnull cacheFilePath) {
+//        NSLog(@"cacheFilePath--->%@",cacheFilePath);
+//    } failed:^{
+//
+//    }];
+    
+    [[LHZDownLoaderManager manger] downLoadWithURL:[NSURL URLWithString:url] downLoadInfo:^(long long fileSize) {
+        NSLog(@"fileSize--->%lld M",(fileSize/1024)/2014);
+    } success:^(NSString * _Nonnull cacheFilePath) {
+        NSLog(@"cacheFilePath--->%@",cacheFilePath);
+    } failed:^{
+        
+    }];
     
     [PSHomeAPI getHomeDataSuccess:^(NSURLSessionDataTask *task, id response) {
         PSRsponse* res = (PSRsponse*)response;
@@ -55,11 +74,11 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    PSPlayerState state = [PSPlayerManger manger].state;
+    PSPlayerState state = [LHZPlayerManger manger].state;
     if (state == PSPlayerStatePlaying) {
-        [[PSPlayerManger manger] pause];
+        [[LHZPlayerManger manger] pause];
     }else {
-        [[PSPlayerManger manger] resume];
+        [[LHZPlayerManger manger] resume];
     }
 }
 

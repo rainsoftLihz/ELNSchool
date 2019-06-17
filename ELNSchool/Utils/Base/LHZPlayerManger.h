@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger,PSPlayerState) {
     PSPlayerStateFailed //失败(比如没有网络缓存失败, 地址找不到)
 };
 
-@interface PSPlayerManger : NSObject
+@interface LHZPlayerManger : NSObject
 
 +(instancetype)manger;
 

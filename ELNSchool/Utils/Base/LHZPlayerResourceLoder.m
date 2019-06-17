@@ -6,8 +6,8 @@
 //  Copyright © 2019年 jzt. All rights reserved.
 //
 
-#import "PSPlayerResourceLoder.h"
+#import "LHZPlayerResourceLoder.h"
 
-@implementation PSPlayerResourceLoder
+@implementation LHZPlayerResourceLoder
 
 @end
