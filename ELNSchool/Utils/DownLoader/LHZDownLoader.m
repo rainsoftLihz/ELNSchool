@@ -48,8 +48,8 @@
     // 1. 下载文件的存储
     //    下载中 -> tmp + (url + MD5)
     //    下载完成 -> cache + url.lastCompent
-    self.cacheFilePath = [kCache stringByAppendingPathComponent:url.lastPathComponent];
-    self.tmpFilePath = [kTmp stringByAppendingPathComponent:[url.absoluteString md5Str]];
+    self.cacheFilePath = [kCachePath stringByAppendingPathComponent:url.lastPathComponent];
+    self.tmpFilePath = [kTmpPath stringByAppendingPathComponent:[url.absoluteString md5Str]];
     
     
     // 1 首先, 判断, 本地有没有已经下载好, 已经下载完毕, 就直接返回
@@ -247,13 +247,13 @@
 + (long long)tmpCacheSizeWithURL: (NSURL *)url {
     
     NSString *tmpFileMD5 = [url.absoluteString md5Str];
-    NSString *tmpPath = [kTmp stringByAppendingPathComponent:tmpFileMD5];
+    NSString *tmpPath = [kTmpPath stringByAppendingPathComponent:tmpFileMD5];
     return  [LHZDownLoaderFileTool fileSizeWithPath:tmpPath];
 }
 
 //clear
 + (void)clearCacheWithURL: (NSURL *)url {
-    NSString *cachePath = [kCache stringByAppendingPathComponent:url.lastPathComponent];
+    NSString *cachePath = [kCachePath stringByAppendingPathComponent:url.lastPathComponent];
     [LHZDownLoaderFileTool removeFileAtPath:cachePath];
 }
 

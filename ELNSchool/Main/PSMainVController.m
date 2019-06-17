@@ -44,8 +44,10 @@
 -(void)reqData{
     
     NSString* url = @"http://audio.xmcdn.com/group55/M02/90/AA/wKgLf1yUdIzDELWBAGIa3y_-DnM545.m4a";
+    url = @"http://audio.xmcdn.com/group57/M07/46/20/wKgLgVyd4_XDkM4XACOEyCgoA9A564.m4a";
+    url = @"http://audio.xmcdn.com/group56/M06/62/D0/wKgLdlyfVwSyvtCcAJ4UntDw2vs694.m4a";
     
-    [[LHZPlayerManger manger] playWithUrlstr:url isCache:NO];
+    [[LHZPlayerManger manger] playWithUrlstr:url isCache:YES];
     
 //    LHZDownLoader* downLoader = [[LHZDownLoader alloc] init];
 //    [downLoader downLoadWithURL:[NSURL URLWithString:url] downLoadInfo:^(long long fileSize) {

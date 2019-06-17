@@ -9,6 +9,8 @@
 #import "LHZPlayerManger.h"
 #import <AVFoundation/AVFoundation.h>
 #import "LHZPlayerResourceLoder.h"
+#import "LHZDownLoaderFileTool.h"
+#import "LHZDownLoaderManager.h"
 @interface LHZPlayerManger()
 //播放器
 @property (nonatomic, strong) AVPlayer *player;
@@ -56,13 +58,25 @@ static LHZPlayerManger* _manger;
     
     //播放初始化流程
     self.url = url;
-    // [AVPlayer playerWithURL:url]
     if (self.player.currentItem) {
         [self clearObserver:self.player.currentItem];
     }
     
+    NSURL *lastURL = url;
+    if (isCache) {
+        if (![LHZDownLoaderFileTool isCacheFileExists:self.url]) {
+            //下载文件
+            [[LHZDownLoaderManager manger]downLoadURL:url];
+        }
+    }
+    
+    if ([LHZDownLoaderFileTool isCacheFileExists:self.url]) {
+        //文件已下载  使用本地资源
+        lastURL = [NSURL URLWithString:[LHZDownLoaderFileTool cachePathWithURL:self.url] ];
+    }
+    NSLog(@"path===>>>%@",lastURL);
     //1. 资源的请求
-    AVURLAsset *asset = [AVURLAsset assetWithURL:url];
+    AVURLAsset *asset = [AVURLAsset assetWithURL:lastURL];
     self.resourceLoder = [[LHZPlayerResourceLoder alloc] init];
     [asset.resourceLoader setDelegate:self.resourceLoder queue:dispatch_queue_create(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
     // 2. 资源的组织

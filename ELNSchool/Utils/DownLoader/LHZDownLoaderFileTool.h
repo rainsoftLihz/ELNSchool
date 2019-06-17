@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define kCachePath NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject
+#define kTmpPath NSTemporaryDirectory()
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LHZDownLoaderFileTool : NSObject
@@ -19,6 +22,20 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)moveFile:(NSString *)fromPath toPath: (NSString *)toPath;
 
 + (void)removeFileAtPath: (NSString *)path;
+
+
+
++ (NSString *)cachePathWithURL: (NSURL *)url;
+
++ (NSString *)tmpPathWithURL: (NSURL *)url;
+
++ (BOOL)isCacheFileExists: (NSURL *)url;
+
++ (BOOL)isTmpFileExists: (NSURL *)url;
+
++ (long long)cacheFileSizeWithURL: (NSURL *)url;
+
++ (NSString *)contentTypeWithURL: (NSURL *)url;
 
 @end
 

@@ -14,8 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define kCache NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject
-#define kTmp NSTemporaryDirectory()
+
 
 #define kDownLoadURLOrStateChangeNotification @"downLoadURLOrStateChangeNotification"
 
@@ -42,6 +41,8 @@ typedef void(^LHZDownLoadFail)(void);
 
 //下载
 - (void)downLoadWithURL: (NSURL *)url downLoadInfo: (LHZDownLoadFileInfo)downLoadFileInfo success: (LHZDownLoadSuccess)successBlock failed:(LHZDownLoadFail)failBlock;
+
+- (void)downLoadWithURL: (NSURL *)url;
 
 // 恢复下载
 - (void)resume;
